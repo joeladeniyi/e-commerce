@@ -1,7 +1,7 @@
 import { connectDB } from "../db/connectDB";
 import Product from "../models/product.model";
 
-export async function Get(request: Request){
+export async function GET(request: Request){
     await connectDB()
     try {
         const products = await Product.find({}).sort({createdAt : -1})
